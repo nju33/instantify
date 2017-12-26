@@ -1,7 +1,7 @@
 {
   "name": "instantify",
   "version": "0.0.0",
-  "description": "Modal without dependenceies",
+  "description": "",
   "main": "dist/instantify.umd.js",
   "jsnext:main": "dist/instantify.es.js",
   "scripts": {
@@ -9,16 +9,11 @@
     "prepare": "yarn prod",
     "preprod": "mkdir -p dist; NODE_ENV='production' node prod.js",
     "prod": "babili dist/instantify.js --no-comments --minified -o dist/instantify.min.js",
-    "test": "jest"
+    "test": "jest",
+    "test:ci": "yarn test -- --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": "nju33/instantify",
   "keywords": [
-    "ui",
-    "browser",
-    "commonjs",
-    "es",
-    "ui",
-    "slidebar"
   ],
   "author": "nju33 <nju33.ki@gmail.com>",
   "license": "MIT",
@@ -43,6 +38,7 @@
     "babili": "^0.1.4",
     "browser-sync": "^2.21.0",
     "casual": "^1.5.19",
+    "coveralls": "^3.0.0",
     "cssnano": "^3.10.0",
     "eslint": "^4.14.0",
     "eslint-config-xo-space": "^0.17.0",
