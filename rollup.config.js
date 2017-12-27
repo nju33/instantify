@@ -22,7 +22,10 @@ module.exports = {
   plugins: [
     nodeResolver({jsnext: true}),
     commonjs({include: 'node_modules/**'}),
-    babel({include: 'lib/**/*.js', runtimeHelpers: true}),
+    babel({
+      include: 'lib/**/*.js',
+      runtimeHelpers: true
+    }),
     replace({
       'process.env.NODE_ENV': JSON.stringify(nodeEnv)
     }),
